@@ -8,7 +8,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(bodyParser.json({limit: '10mb'}));
+app.use(bodyParser.json({limit: '100mb'}));
 
 app.post('/upload',(req,res)=>{
     const filepath = base64Img.imgSync(req.body.base64, '../images', `${uuidv4()}${Date.now()}`); // Synchronous using
