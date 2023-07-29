@@ -12,7 +12,7 @@ app.use(bodyParser.json({limit: '10mb'}));
 
 app.post('/upload',(req,res)=>{
     const filepath = base64Img.imgSync(req.body.base64, '../images', `${uuidv4()}${Date.now()}`); // Synchronous using
-    res.status(200).json({location:`https://www.brainlytic.org/${filepath.replaceAll('\\','/').replaceAll('../','')}`})
+    res.status(200).json({location:`https://www.brainlytic.org/${filepath.replace('\\','/').replace('../','')}`})
 })
 
 
